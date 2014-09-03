@@ -1,16 +1,10 @@
 class Workout
+  attr_reader :exercises, :id, :date
+
   def initialize(id, workout_data)
     @id = id
     @date = workout_data[:date]
     @exercises = workout_data[:exercises]
-  end
-
-  def id
-    @id
-  end
-
-  def date
-    @date
   end
 
   def type
