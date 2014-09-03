@@ -3,10 +3,10 @@ require_relative 'exercise'
 class Workout
   attr_reader :exercises, :id, :date
 
-  def initialize(id, workout_data)
+  def initialize(id, workout_data, exercises = [])
     @id = id
     @date = workout_data[:date]
-    @exercises = workout_data[:exercises]
+    @exercises = exercises
   end
 
   def type
