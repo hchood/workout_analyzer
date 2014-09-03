@@ -34,7 +34,13 @@ all_workout_data = load_workout_data("workouts.csv")
 workouts = []
 
 all_workout_data.each do |id, workout_data|
-  workouts << Workout.new(id, workout_data)
+  workout = Workout.new(id, workout_data)
+
+  workout_data[:exercises].each do |exercise_data|
+    workout.exercises << Exercise.new(exercise_data)
+  end
+
+  workouts << workout
 end
 
 tp(workouts, :id, :date, :type, :duration, :calories_burned)
