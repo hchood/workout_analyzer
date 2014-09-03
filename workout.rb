@@ -23,7 +23,7 @@ class Workout
     total = 0.0
 
     @exercises.each do |exercise|
-      total += exercise[:duration_in_min]
+      total += exercise.duration_in_min
     end
 
     total
@@ -33,16 +33,16 @@ class Workout
     calories = 0.0
 
     @exercises.each do |exercise|
-      if exercise[:category] == "cardio"
-        if exercise[:intensity] == "high"
-          calories += (exercise[:duration_in_min] * 10.0)
-        elsif exercise[:intensity] == "medium"
-          calories += (exercise[:duration_in_min] * 8.0)
-        elsif exercise[:intensity] == "low"
-          calories += (exercise[:duration_in_min] * 5.0)
+      if exercise.category == "cardio"
+        if exercise.intensity == "high"
+          calories += (exercise.duration_in_min * 10.0)
+        elsif exercise.intensity == "medium"
+          calories += (exercise.duration_in_min * 8.0)
+        elsif exercise.intensity == "low"
+          calories += (exercise.duration_in_min * 5.0)
         end
       else
-        calories += exercise[:duration_in_min] * 6.0
+        calories += exercise.duration_in_min * 6.0
       end
     end
 
@@ -55,7 +55,7 @@ class Workout
     exercise_count = 0
 
     @exercises.each do |exercise|
-      if exercise[:category] == exercise_type
+      if exercise.category == exercise_type
         exercise_count += 1
       end
     end
