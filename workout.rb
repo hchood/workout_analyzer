@@ -1,3 +1,5 @@
+require_relative 'exercise'
+
 class Workout
   attr_reader :exercises, :id, :date
 
