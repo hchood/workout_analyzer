@@ -17,6 +17,8 @@ class Exercise
       elsif intensity == "low"
         duration_in_min * 5.0
       end
+    elsif category == "strength"
+      duration_in_min * 5.0
     else
       duration_in_min * 6.0
     end
