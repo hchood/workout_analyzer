@@ -33,17 +33,7 @@ class Workout
     calories = 0.0
 
     @exercises.each do |exercise|
-      if exercise.category == "cardio"
-        if exercise.intensity == "high"
-          calories += (exercise.duration_in_min * 10.0)
-        elsif exercise.intensity == "medium"
-          calories += (exercise.duration_in_min * 8.0)
-        elsif exercise.intensity == "low"
-          calories += (exercise.duration_in_min * 5.0)
-        end
-      else
-        calories += exercise.duration_in_min * 6.0
-      end
+      calories += exercise.calories_burned
     end
 
     calories
